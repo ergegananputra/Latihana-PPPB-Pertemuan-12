@@ -4,11 +4,13 @@ plugins {
 
     // Kotlin KAPT
     id("kotlin-kapt")
+
+//    id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.latihanbyrg.latihanpertemuan12"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.latihanbyrg.latihanpertemuan12"
@@ -36,12 +38,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+
+    }
+
 }
 
 dependencies {
     // ROOM
     implementation("androidx.room:room-runtime:2.6.0")
     kapt("androidx.room:room-compiler:2.6.0")
+//    ksp("androidx.room:room-compiler:2.6.0")
 
 
     implementation("androidx.core:core-ktx:1.9.0")
